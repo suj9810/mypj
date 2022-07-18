@@ -3,12 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>gusinsa.join</title>
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
-</head>
 <script>
 	/* 전체동의 */
 	/* 첫번째 약관 동의 */
@@ -52,16 +46,46 @@
     table{
             padding-left: 500px;
     }
-    body{
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 0px;
+    body, h2{
+            margin: 0;
+            margin-bottom: 20px;
+    }
+    header{
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 4rem;
+            line-height: 4rem;
+            text-align: center;
     }
     .h2{
+            background-color: white;
+    }
+    .h3{
+            font-family: HY견명조, sans-serif;
+            padding-top:5px;
+            width:1900px;
+            height: 100px;
+            padding-bottom: 25px;
+            background-color: black;
+            color: white;
             text-align: center;
             font-weight: 400;
-           	font-size: 20px;
+            font-size: 25px;
     }
+    .h2{
+    	padding-top: 20px;
+       text-align: center;
+       font-weight: 400;
+       font-size: 20px;
+    }
+    .p1{
+            margin-top: 250px;
+            text-align: center;
+            font-weight: 400;
+            font-size: 20px;
+        }
     .p2{
         padding-left: 500px;
         padding-right: 550px;
@@ -236,13 +260,23 @@
     }
 </style>
 <body>
-    <h3>구신사 회원가입</h3>
-    <div class="h2">
-    	<h2>회원가입</h2>
-    </div>
-    <hr />
+    <div>
+	    <header>
+	        <div class="h3">
+	            <h3>gusinsa.com</h3>
+	        </div>
+	        <div class="h_2">
+	            <div class="h2">
+	                <h2>회원가입</h2>
+	        <hr />
+	            </div>
+	        </div>
+	    </header>
+	</div>
     <tbody>
-    <p>약관동의</p>
+    <div class="p1">
+    	<p>약관동의</p>
+    </div>
     <div class="p2">
         <p>고객님의 회원가입 시 필요한 정보 수집 시 「개인정보보호법」 제15조, 제22조 및 「정보통신망 이용 촉진 및 정보보호 등에 관한 법률」 제22조에 따라
                         고객 본인의 동의를 얻고 있습니다. 이에 아래 약관 및 개인정보 수집 내용을 확인하시고 동의여부를 결정하여 주시기 바랍니다.</p>

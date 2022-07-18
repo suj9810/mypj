@@ -75,13 +75,36 @@
         table{
             padding-left: 500px;
         }
-        body{
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 0px;
-    	}
         th{
             color: #333;
+        }
+        body, h2{
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        header{
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 4rem;
+            line-height: 4rem;
+            text-align: center;
+        }
+        .h2{
+            background-color: white;
+        }
+        .h3{
+            font-family: HY견명조, sans-serif;
+            padding-top:5px;
+            width:1900px;
+            height: 100px;
+            padding-bottom: 25px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-weight: 400;
+            font-size: 25px;
         }
         .sp1{
             padding-right: 200px;
@@ -124,11 +147,13 @@
         #sample6_postcode{
             width: 100px;
             height: 35px;
+            margin-bottom: 5px;
         }
         /* 주소 */
         #sample6_address{
             width: 287px;
             height: 35px;
+            margin-bottom: 5px;
         }
         /* 참고항목 */
         #sample6_extraAddress{
@@ -155,26 +180,9 @@
             color: #9c9c9c;
             font-size: 12px;
         }
-        .h3{
-        	font-family: HY견명조, sans-serif;
-        	padding-top:21px;
-        	width:1900px;
-        	height: 100px;
-        	background-color: black;
-        	color: white;
-            text-align: center;
-            font-weight: 400;
-           	font-size: 20px;
-        }
-        /* 회원가입 */
-        .h2{
-            text-align: center;
-            font-weight: 400;
-           	font-size: 20px;
-        }
         /* 회원정보입력 및 회원가입 설명 */
         .p1{
-        	margin-top: 150px;
+            margin-top: 250px;
             text-align: center;
             font-weight: 400;
             font-size: 20px;
@@ -188,6 +196,13 @@
         /* 회원기본정보 */
         .t_body{
             text-align: left;
+        }
+        /* 비밀번호글씨 */
+        .psps{
+        	padding-bottom: 157px;
+        }
+        .mailmail{
+        	padding-bottom: 27px;
         }
         /* 마케팅동의 */
         .mar{
@@ -376,15 +391,19 @@
         }
     </style>
     <body>
-    <div class="h3">
-    	<h3>gusinsa.com</h3>
-    </div>
-    <div class="h_2">
-    	<div class="h2">
-    		<h2>회원가입</h2>
-    <hr />
-   		</div>
-   	</div>
+    <div>
+	    <header>
+	        <div class="h3">
+	            <h3>gusinsa.com</h3>
+	        </div>
+	        <div class="h_2">
+	            <div class="h2">
+	                <h2>회원가입</h2>
+	        <hr />
+	            </div>
+	        </div>
+	    </header>
+	</div>
     <div class="p1">
         <div class="p2">
             <p>회원정보입력</p>
@@ -408,7 +427,7 @@
                 
             </tr>
             <tr>
-                <th><span class="red">*</span>비밀번호</th>
+                <th class="psps"><span class="red">*</span>비밀번호</th>
                 <td>
                     <input type="password" id="pw" placeholder=" 비밀번호를 입력해주세요." />
                     <p id="pwex">10~20자리</p>
@@ -445,7 +464,7 @@
                 </td>
             </tr>
             <tr>
-                <th><span class="red">*</span>이메일</th>
+                <th class="mailmail"><span class="red">*</span>이메일</th>
                 <td>
                     <input type="tel" value="" id="email" placeholder=" 이메일 주소를 입력해주세요." /> <br />
                     <input type="checkbox" /><span class="idsame">아이디로 사용할 이메일 주소와 동일합니다.</span>

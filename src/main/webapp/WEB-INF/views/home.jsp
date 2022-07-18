@@ -13,5 +13,6 @@
 <a href="login/loginform">loginform</a>
 <a href="join/joinform2">joinform2</a>
 <a href="join/joinform3">joinform3</a>
+<a href="join/joinform4">joinform4</a>
 </body>
 </html>
