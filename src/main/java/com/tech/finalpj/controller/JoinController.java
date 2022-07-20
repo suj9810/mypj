@@ -31,4 +31,10 @@ public class JoinController {
 		
 		return "/join/joinform4";
 	}
+	@RequestMapping("/joinform5")
+	public String joinform5() {
+		System.out.println("join");
+		
+		return "/join/joinform5";
+	}
 }

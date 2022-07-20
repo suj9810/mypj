@@ -72,7 +72,7 @@
 </head>
     <style>
         /* 테이블 & th */
-        table{
+        .table_1{
             padding-left: 500px;
         }
         th{
@@ -80,26 +80,25 @@
         }
         body, h2{
             margin: 0;
-            margin-bottom: 20px;
         }
-        header{
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            height: 4rem;
-            line-height: 4rem;
+        .h_2{
+            width:100%;
             text-align: center;
+            position: sticky;
+            top: 0; /* 클래스 sticky인 요소 안에서 top값이 0이되면 sticky를 적용 */
+            line-height: 80px;
         }
         .h2{
             background-color: white;
+            /* padding-top: 3%; */
+            font-size: 20px;
         }
         .h3{
             font-family: HY견명조, sans-serif;
-            padding-top:5px;
-            width:1900px;
+            padding-top:15px;
+            width:100%;
             height: 100px;
-            padding-bottom: 25px;
+            padding-bottom: 15px;
             background-color: black;
             color: white;
             text-align: center;
@@ -143,26 +142,23 @@
             width: 400px;
             height: 35px;
         }
-        /* 우편번호 */
+        /* 상세주소 */
         #sample6_postcode{
             width: 100px;
             height: 35px;
             margin-bottom: 5px;
         }
-        /* 주소 */
         #sample6_address{
-            width: 287px;
+            width: 288px;
             height: 35px;
             margin-bottom: 5px;
         }
-        /* 참고항목 */
         #sample6_extraAddress{
             width: 150px;
             height: 35px;
         }
-        /* 상세주소 */
         #sample6_detailAddress{
-            width: 237px;
+            width: 238px;
             height: 35px;
         }
         /* 개인정보설명 */
@@ -182,27 +178,19 @@
         }
         /* 회원정보입력 및 회원가입 설명 */
         .p1{
-            margin-top: 250px;
+
             text-align: center;
             font-weight: 400;
             font-size: 20px;
         }
         /* 회원정보입력 */
         .p2{
-            
             font-weight: 900;
             font-size: 30px;
         }
         /* 회원기본정보 */
         .t_body{
             text-align: left;
-        }
-        /* 비밀번호글씨 */
-        .psps{
-        	padding-bottom: 157px;
-        }
-        .mailmail{
-        	padding-bottom: 27px;
         }
         /* 마케팅동의 */
         .mar{
@@ -389,28 +377,43 @@
             7px 7px 20px 0px #0002,
             4px 4px 5px 0px #0001;
         }
+        .line_one{
+        	width: 60%;
+        }
+        /*푸터어어어*/
+		footer {width: 100%;height: 10px;bottom: 5px;  position: relative;border-top: 1px solid #c4c4c4; color: #808080;font-size: 11px; transform: translateY(-100%);}
+		footer a:visited {color: #808080;}
+		footer p {margin-top: 0;  margin-left: 10px;}
+		footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;} 
+		#wrap{
+		    width: 100%;height: auto;
+		    min-height: 100%;
+		    margin-top: 10px;
+		}
+		#wrap_section{
+		    margin-top: 50px;
+		    margin-left: 0;
+		}
+		#footer_addr{float: left;}
+		.footer_div{margin-top: 20px;margin-right: 30px;float: right; margin-bottom: 10px;}
     </style>
     <body>
-    <div>
-	    <header>
-	        <div class="h3">
-	            <h3>gusinsa.com</h3>
-	        </div>
-	        <div class="h_2">
-	            <div class="h2">
-	                <h2>회원가입</h2>
-	        <hr />
-	            </div>
-	        </div>
-	    </header>
-	</div>
+		<div class="h3">
+            <h3>gusinsa.com</h3>
+        </div>
+            <div class="h_2">
+                <div class="h2">
+                    <h2>회원가입</h2>
+                    <hr />
+                </div>
+            </div>
     <div class="p1">
         <div class="p2">
             <p>회원정보입력</p>
         </div>
         <p>회원가입을 위해 회원정보를 입력하여 주시기 바랍니다.</p>
     </div>
-    <table>
+    <table class="table_1">
         <tbody class="t_body">
             <tr>
                 <th>[회원기본정보]</th>
@@ -422,14 +425,14 @@
                 <th><span class="red">*</span>아이디</th>
                 
                     <td>
-                        <input type="email" id="idemail" placeholder=" 이메일 주소를 입력해주세요." />
+                        <input type="email" name="mid" id="idemail" placeholder=" 이메일 주소를 입력해주세요." />
                     </td>
                 
             </tr>
             <tr>
                 <th class="psps"><span class="red">*</span>비밀번호</th>
                 <td>
-                    <input type="password" id="pw" placeholder=" 비밀번호를 입력해주세요." />
+                    <input type="password" name="mpw" id="pw" placeholder=" 비밀번호를 입력해주세요." />
                     <p id="pwex">10~20자리</p>
                     <p id="pwex">영소문자/숫자/특수문자 중 두가지 이상 조합</p>
                     <p id="pwex">사용가능한 특수문자:~!@#$%^&*()_+ </p>
@@ -440,19 +443,19 @@
             <tr>
                 <th><span class="red">*</span>비밀번호 확인</th>
                 <td>
-                    <input type="password" id="pwcheck" placeholder=" 비밀번호를 다시 입력해주세요." />
+                    <input type="password" name="mpwc" id="pwcheck" placeholder=" 비밀번호를 다시 입력해주세요." />
                 </td>
             </tr>
             <tr>
                 <th><span class="red">*</span>이름</th>
                 <td>
-                    <input type="text" id="name" placeholder=" 이름을 입력해주세요." />
+                    <input type="text" name="mname" id="name" placeholder=" 이름을 입력해주세요." />
                 </td>
             </tr>
             <tr>
                 <th><span class="red">*</span>생년월일/성별</th>
                 <td>
-                    <input type="tel" value="" id="bithdate" placeholder=" 생년월일을 입력해주세요." readonly="readonly"/>
+                    <input type="tel" name="mgender" value="" id="bithdate" placeholder=" 생년월일을 입력해주세요." readonly="readonly"/>
                     <input type="radio" name="gender" value="M" id="male" />남
                     <input type="radio" name="gender" value="F" id="female" />여
                 </td>
@@ -460,24 +463,24 @@
             <tr>
                 <th><span class="red">*</span>휴대폰번호</th>
                 <td>
-                    <input type="tel" value="" id="tel" placeholder=" 휴대폰 번호를 입력해주세요." readonly="readonly"/>
+                    <input type="tel" name="mphone" value="" id="tel" placeholder=" 휴대폰 번호를 입력해주세요." readonly="readonly"/>
                 </td>
             </tr>
             <tr>
                 <th class="mailmail"><span class="red">*</span>이메일</th>
                 <td>
-                    <input type="tel" value="" id="email" placeholder=" 이메일 주소를 입력해주세요." /> <br />
+                    <input type="tel" name="memail" value="" id="email" placeholder=" 이메일 주소를 입력해주세요." /> <br />
                     <input type="checkbox" /><span class="idsame">아이디로 사용할 이메일 주소와 동일합니다.</span>
                 </td>
             </tr>
             <tr>
                 <th><span class="red">*</span>주소 </th>
                 <td>
-                    <input type="text" id="sample6_postcode" placeholder="우편번호" readonly="readonly">
-					<input type="text" id="sample6_address" placeholder="주소" readonly="readonly">
+                    <input type="text" name="maddr" id="sample6_postcode" placeholder="우편번호" readonly="readonly">
+					<input type="text" name="maddr" id="sample6_address" placeholder="주소" readonly="readonly">
 					<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="addr-btn btn-1"><br>
-					<input type="text" id="sample6_extraAddress" placeholder="참고항목" readonly="readonly">
-					<input type="text" id="sample6_detailAddress" placeholder=" 상세 주소를 입력해주세요.">
+					<input type="text" name="maddr" id="sample6_extraAddress" placeholder="참고항목" readonly="readonly">
+					<input type="text" name="maddr" id="sample6_detailAddress" placeholder=" 상세 주소를 입력해주세요.">
                     <div class="add-info">
                         <p class="adep">구매하신 상품 등에 대한 배송 받으실 주소를 입력해 주시기 바랍니다.</p>
                     </div>
@@ -525,7 +528,7 @@
             </tr>
         </tbody>
     </table>
-    <hr />
+    <hr class="line_one"/>
         <div class="mem-save">
             <h4>구신사 회원가입을 완료하시겠습니까?</h4>
         </div>
@@ -533,5 +536,46 @@
             <button class="customm-btn btn-5">이전</button>
             <button class="customm2-btn btn-6">다음</button>
         </div>
+        <div id='wrap'>
+        <section id="wrap_section">
+            
+        </section>
+        <footer>
+            <div id="footer_addr">
+    
+          <p>
+            <table>
+            <tr>
+                <td>상호명 : (주)구신사</td>
+                <td>조장 : 이종현</td>
+                <td>주소 : 서울시 구로구 </td>
+            </tr>
+            <tr>
+                <td colspan="3">이메일 : dlwhdgus@gmail.com</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+          </p>
+        </div>
+    
+          <div class="footer_div">
+            <table>
+                <tr>
+                    <td>고객문의 대표전화</td>
+                    <td>고객센터 문의전화</td>
+                </tr>
+                <tr>
+                    <td>1588-1588</td>
+                    <td>1588-3407</td>
+                </tr>
+                <tr>
+                    <td>평일 09:00 ~ 18:00 <br>(주말 및 공휴일 휴무)</td>
+                    <td><a href="#">구신사 상품 문의접수</a></td>
+                </tr>
+            </table>
+          </div>
+      </footer>
+    </div>
     </body>
     </html>

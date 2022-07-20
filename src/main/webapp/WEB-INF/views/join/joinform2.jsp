@@ -43,58 +43,63 @@
 	}
 </script>
 <style>
-    table{
-            padding-left: 500px;
-    }
     body, h2{
-            margin: 0;
+         margin: 0;
             margin-bottom: 20px;
     }
-    header{
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            height: 4rem;
-            line-height: 4rem;
-            text-align: center;
+  	.h_2{
+		width:100%;
+		text-align: center;
+         position: sticky;
+         top: 0; /* 클래스 sticky인 요소 안에서 top값이 0이되면 sticky를 적용 */
+         line-height: 80px;
     }
     .h2{
-            background-color: white;
-    }
-    .h3{
+		background-color: white;
+            /* padding-top: 3%; */
+            font-size: 20px;
+        }
+        .h3{
             font-family: HY견명조, sans-serif;
-            padding-top:5px;
-            width:1900px;
+            padding-top:15px;
+            width:100%;
             height: 100px;
-            padding-bottom: 25px;
+            padding-bottom: 15px;
             background-color: black;
             color: white;
             text-align: center;
             font-weight: 400;
             font-size: 25px;
-    }
-    .h2{
-    	padding-top: 20px;
-       text-align: center;
-       font-weight: 400;
-       font-size: 20px;
-    }
+        }
+        .h_3{
+        	padding-left: 23%;
+        }
     .p1{
-            margin-top: 250px;
             text-align: center;
             font-weight: 400;
             font-size: 20px;
         }
     .p2{
-        padding-left: 500px;
-        padding-right: 550px;
+        padding-left: 23%;
+        padding-right: 24%;
+    }
+    .allall{
+    	padding-left: 23%;
+    	padding-right: 24%;
+    }
+    .all{
+    	text-align: left;
+    }
+    .allcheck{
+    	margin-left: 63%;
     }
     .red{
         color: red;
     }
     .t1{
-        text-align: left;
+    	padding-left: 23%;
+    	padding-right: 24%;
+        /* text-align: left;
         width: 800px;
         height: 100px;
         border: solid;
@@ -103,10 +108,20 @@
         padding-left: 10px;
         padding-right: 10px;
         color: #333;
-        font-size: 12px;
+        font-size: 12px; */
     }
+    /* .t_1{
+    	border: 1px solid;
+    	border-color: #787878;
+    	color: #333;
+    	font-size: 13px;
+    	height: 150px;
+  		width: 200px;
+    } */
     .t2{
-        text-align: left;
+    	padding-left: 23%;
+    	padding-right: 24%;
+        /* text-align: left;
         width: 800px;
         height: 100px;
         border: solid;
@@ -115,10 +130,12 @@
         padding-left: 10px;
         padding-right: 10px;
         color: #333;
-        font-size: 12px;
+        font-size: 12px; */
     }
     .t3{
-        text-align: left;
+    	padding-left: 23%;
+    	padding-right: 24%;
+        /* text-align: left;
         width: 800px;
         height: 100px;
         border: solid;
@@ -127,10 +144,12 @@
         padding-left: 10px;
         padding-right: 10px;
         color: #333;
-        font-size: 12px;
+        font-size: 12px; */
     }
     .t4{
-        text-align: left;
+    	padding-left: 23%;
+    	padding-right: 24%;
+        /* text-align: left;
         width: 800px;
         height: 100px;
         border: solid;
@@ -139,8 +158,11 @@
         padding-left: 10px;
         padding-right: 10px;
         color: #333;
-        font-size: 12px;
+        font-size: 12px; */
     }
+    /* 버튼위치 */
+    
+    
     /* 버튼 전체 */
     .custom-btn {
     width: 100px;
@@ -232,6 +254,7 @@
     }
     /* 종료버튼 */
     .customm2-btn {
+    
     width: 200px;
     height: 40px;
     padding: 5px 5px 5px 5px;
@@ -260,20 +283,15 @@
     }
 </style>
 <body>
-    <div>
-	    <header>
-	        <div class="h3">
-	            <h3>gusinsa.com</h3>
-	        </div>
-	        <div class="h_2">
-	            <div class="h2">
-	                <h2>회원가입</h2>
-	        <hr />
-	            </div>
-	        </div>
-	    </header>
-	</div>
-    <tbody>
+    <div class="h3">
+            <h3>gusinsa.com</h3>
+        </div>
+            <div class="h_2">
+                <div class="h2">
+                    <h2>회원가입</h2>
+                    <hr />
+                </div>
+            </div>
     <div class="p1">
     	<p>약관동의</p>
     </div>
@@ -281,14 +299,19 @@
         <p>고객님의 회원가입 시 필요한 정보 수집 시 「개인정보보호법」 제15조, 제22조 및 「정보통신망 이용 촉진 및 정보보호 등에 관한 법률」 제22조에 따라
                         고객 본인의 동의를 얻고 있습니다. 이에 아래 약관 및 개인정보 수집 내용을 확인하시고 동의여부를 결정하여 주시기 바랍니다.</p>
     </div>
-    <table>
-        <tr>
-            <td>아래의 약관에 모두 동의 합니다</td>
-            <td><input type="checkbox" />전체 동의</td>
-        </tr>
+
+    	
+	    <tr>
+	    	<div class="allall">
+			    <td>
+			    	<span class="all">아래의 약관에 모두 동의 합니다</span>
+			        <span class="allcheck"><input type="checkbox" />전체 동의</span>
+			   	</td>
+		    </div>
+	    </tr>
         <tr>
             <td>
-                <h3>
+                <h3 class="h_3">
                     <span>서비스 이용약관</span>
                     <span class="red">(필수)</span>
                 </h3>
@@ -296,8 +319,10 @@
         </tr>
         
         <tr>
-            <td class="t1">이 약관은 (주)구신사에서 운영하는 구신사 멤버스와 구신사닷컴(https://gusinsa.com) 에서 제공하는 인터넷 관련 서비스를 이용함에 있어 (주)구신사와
-            이용자의 권리, 의무 및 책임 사항을 규정함을 목적으로 합니다.</td>
+        	<div class="t1">
+	            <td class="t_1">이 약관은 (주)구신사에서 운영하는 구신사 멤버스와 구신사닷컴(https://gusinsa.com) 에서 제공하는 인터넷 관련 서비스를 이용함에 있어 (주)구신사와
+	            이용자의 권리, 의무 및 책임 사항을 규정함을 목적으로 합니다.</td>
+            </div>
         </tr>
         <tr>
             <td>
@@ -315,8 +340,8 @@
             </td>
         </tr>
         <tr>
-            <div>
-                <td class="t2">당사는 구신사 멤버스 통합회원 및 구신사 멤버스 간편가입회원에게 <br />
+            <div class="t2">
+                <td>당사는 구신사 멤버스 통합회원 및 구신사 멤버스 간편가입회원에게 <br />
                 본인확인, 포인트 적립 및 결제 서비스, 다양하고 편리한 서비스를 제공하기 위해 아래의 방법을 통해 개인정보를 수집하고 있습니다</td>
             </div>
         </tr>
@@ -336,8 +361,8 @@
             </td>
         </tr>
         <tr>
-            <div>
-                <td class="t3">당사는 서비스 이행을 위해 아래와 같이 개인정보 처리 업무를 외부업체에 위탁하여 운영하고 있습니다.</td>
+            <div class="t3">
+                <td >당사는 서비스 이행을 위해 아래와 같이 개인정보 처리 업무를 외부업체에 위탁하여 운영하고 있습니다.</td>
             </div>
         </tr>
         <tr>
@@ -356,8 +381,8 @@
             </td>
         </tr>
         <tr>
-            <div>
-                <td class="t4">(주)구신사는 직접 위치정보를 수집하거나 위치정보사업자로부터 위치정보를 전달받아 위치기반서비스(주변매장찾기)를 제공합니다.
+            <div class="t4">
+                <td>(주)구신사는 직접 위치정보를 수집하거나 위치정보사업자로부터 위치정보를 전달받아 위치기반서비스(주변매장찾기)를 제공합니다.
                     위치기반서비스의 이용요금은 무료입니다. 단, 무선서비스 이용시 발생하는 데이터 통신료는 별도이며, 
                     이용자가 가입한 각 이동통신사의 정책을 따릅니다.</td>
             </div>
@@ -369,8 +394,6 @@
                 <span><input type="checkbox" value="2" type="checkbox" name="check4" onclick="checkFour(this);" />동의 안함</span>
             </td>
         </tr>
-    </tbody>
-    </table>
     <div class="btn22">
         <button class="customm-btn btn-5">이전</button>
         <button class="customm2-btn btn-6">다음</button>

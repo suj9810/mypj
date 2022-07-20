@@ -3,10 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>gusinsa.login</title>
-</head>
 <!-- <link rel="stylesheet" href="../headerimg/header.css"> -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
      <style>
@@ -217,7 +213,6 @@ input[id="menuicon"]:checked +label span:nth-child(3){
     margin: 0 auto; 
     text-align: center;
 } */
-
 /*푸터어어어*/
 
 
@@ -237,143 +232,12 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
 .footer_div{margin-top: 20px;margin-right: 30px;float: right; margin-bottom: 10px;}
 
 /* 여기서부터 은주 */
-	.main11{
-		padding-left: 20%;
+	.map_1{
+		padding-top: 20%;
+		padding-bottom: 20%;
+		padding-left: 30%;
 	}
-	.main {
 
-        min-width: 500px;
-        max-width: 0px;
-        padding: 50px;
-        background: #ffffff;
-        padding-left: 20%;
-        
-        }
-    section {
-        display: none;
-        padding: 20px 0 0;
-        border-top: 1px solid #ddd;}
-    /*라디오버튼 숨김*/
-      #tab1,#tab2{
-          display: none;}
-    label {
-        display: inline-block;
-        margin: 0 0 -1px;
-        padding: 10px 100px;
-        font-weight: 600;
-        text-align: center;
-        color: #bbb;
-        border: 1px solid transparent;}
-    label:hover {
-        color: #555;
-        cursor: pointer;}
-    /*input 클릭시, label 스타일*/
-    input:checked + label {
-          color: #555;
-          border: 1px solid #ddd;
-          border-top: 2px solid black;
-          border-bottom: 0px solid #ffffff;}
-    #tab1:checked ~ #content1,
-    #tab2:checked ~ #content2 {
-    	
-        display: contents;
-    }
-    .content2{
-        font-weight: bold;
-    }
-    .body_body{
-        padding-top: 15%;
-        padding-left: 20%;
-    }
-    #mid{
-    	margin-top:20px;
-    	width: 480px;
-    	height: 40px;
-    }
-    #mpw{
-    	margin-top:10px;
-    	margin-bottom:10px;
-    	width: 480px;
-    	height: 40px;
-    }
-    #nid{
-	    margin-top:20px;
-	    width: 480px;
-	    height: 40px;
-    }
-    #nno{
-	    margin-top:20px;
-	    margin-bottom: 20px;
-	    width: 480px;
-	    height: 40px;
-    }
-    .a_idpw{
-    	text-align: right;
-    }
-	/* 버튼전체 */
-        .btn22{
-            text-align: center;
-        }
-        /* 로그인 */
-        .customm2-btn {
-            width: 200px;
-            height: 40px;
-            padding: 5px 5px 5px 5px;
-            border: 1px solid #000;
-            font-family: 'Lato', sans-serif;
-            font-weight: 500;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            display: inline-block;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        /* 로그인 */
-        .btn-1 {
-        	margin-top: 20px;
-            background: #000;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-        .btn-1:hover {
-            box-shadow:
-            -7px -7px 20px 0px #fff9,
-            -4px -4px 5px 0px #fff9,
-            7px 7px 20px 0px #0002,
-            4px 4px 5px 0px #0001;
-        }
-        /* 비회원 로그인 */
-        .customm3-btn {
-            width: 200px;
-            height: 40px;
-            padding: 5px 5px 5px 5px;
-            border: 1px solid #000;
-            font-family: 'Lato', sans-serif;
-            font-weight: 500;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            display: inline-block;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        /* 비회원 로그인 */
-        .btn-2 {
-        	margin-bottom: 19%;
-            background: #000;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-        .btn-2:hover {
-            box-shadow:
-            -7px -7px 20px 0px #fff9,
-            -4px -4px 5px 0px #fff9,
-            7px 7px 20px 0px #0002,
-            4px 4px 5px 0px #0001;
-        }
     </style>
 
     <header>
@@ -524,68 +388,32 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
     </header>
 </head>
 <body>
-<div class="body_body">
-	<div class="main11">
-		<h2>안녕하세요 고객님!</h2>
-		<p>구신사의 회원이 되시면 더 많은 혜택을 누리실 수 있습니다</p>
-	</div>
-    <div class="main">
-            <input id="tab1" type="radio" name="tabs" checked> 
-            <label for="tab1">회원</label>
-        
-            <input id="tab2" type="radio" name="tabs">
-            <label for="tab2">비회원</label>
-
-            <section id="content1">
-                <tr>
-                    <td>
-                        <input type="text" id="mid" name="mid" placeholder=" 아이디"/> <br />
-                        <input type="text" id="mpw" name="mpw" placeholder=" 비밀번호"/> <br />
-                    </td>
-                </tr>
-                <tr>
-                	<span>
-                    <td>
-                        <input type="checkbox" />아이디 저장
-                    </td> 
-                	<div class="a_idpw">
-                    <td>
-	                    <a href="#">아아디 찾기</a>
-                        |
-                        <a href="#">비밀번호 찾기</a> <br />
-                    </td>
-                 	</div>
-                 	</span>
-                </tr>
-                <tr>
-                    <div class="btn22">
-					        <button class="customm2-btn btn-1">로그인</button>
-					  </div>
-                </tr>
-            
-            <p>아직 구신사의 회원이 아니신가요?</p><a href="#">회원가입</a>
-
-            </section>
-        
-            <section id="content2" class="content2">
-                <tr>
-                    <div class="no_lo">
-                    <td>
-                        <span><input type="radio" />주문자 이름+주문번호</span>
-                        <span><input type="radio" />주문자 이름+휴대폰번호</span> <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" id="nid" placeholder="주문자명" /> <br />
-                        <input type="text" id="nno" placeholder="주문번호" /> <br />
-                    </td>
-                </tr>
-                <div class="btn22">
-					        <button class="customm3-btn btn-2">비회원 주문조회</button>
-				</div> 
-            </section>
-    </div>
+<div class="map_1">
+	<div  id="map" style="width:500px;height:400px;"></div>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcb4928a1fc827ef6cbbe798d1f33f12"></script>
+		<script>
+			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(37.482, 126.8982), // 지도의 중심좌표
+		        level: 3 // 지도의 확대 레벨
+		    };
+		
+			var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			
+			// 마커가 표시될 위치입니다 
+			var markerPosition  = new kakao.maps.LatLng(37.482, 126.8982); 
+			
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+			    position: markerPosition
+			});
+			
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
+			
+			// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+			// marker.setMap(null); 
+		</script>
 </div>
 <div id='wrap'>
         <section id="wrap_section">
@@ -627,6 +455,6 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
             </table>
           </div>
       </footer>
-    </div>  
+    </div>
 </body>
 </html>
