@@ -6,6 +6,95 @@
 <head>
 <meta charset="UTF-8">
 <title>gusinsa.login</title>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+
+<script>
+// 카카오 초기화
+Kakao.init('84f46626395e42bdc72cdb114b32c584');
+
+function kakaoLogin() {
+	
+    Kakao.Auth.login({
+        success: function(response) {
+            Kakao.API.request({ // 사용자 정보 가져오기 
+                url: '/v2/user/me',
+                success: (response) => {
+                	var kakaoid = response.id+"K";
+                    $.ajax({
+    					type : "post",
+    					url : '/login/idDuplicateCheck.go', // ID중복체크를 통해 회원가입 유무를 결정한다.
+    					data : {"userid":kakaoid},
+    					dataType:"json",
+    					success : function(json){   				
+    						if(json.idExists){
+    							// 존재하는 경우 로그인 처리
+    							createHiddenLoginForm(kakaoid);
+    							
+    						} else{
+    							// 회원가입
+    							$.ajax({
+    								type : "post",
+    		    					url : '/login/kakaoSignUp.go',
+    		    					data : {"userid":kakaoid,
+    		    						    "name":response.properties.nickname,
+    		    						    "email":response.kakao_account.email},
+    		    					dataType :"json",
+    		    					success : function(json){
+    		    						if(json.success){
+    		    							// 로그인
+    		    							createHiddenLoginForm(kakaoid);		    							
+    		    						} else {
+    		    							alert('카카오 회원가입 실패. 일반계정으로 로그인하시기 바랍니다.');
+    		    						}
+    		    					},
+    		    					error: function(request, status, error){
+    		    		                   alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+    		    		                }
+    							});
+    						}						
+    					},
+    					error: function(request, status, error){
+    		                   alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+    		                }
+    				});
+                }
+            });
+            // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드
+        },
+        fail: function(error) {
+            alert(error);
+        }
+    });
+}
+
+function createHiddenLoginForm(kakaoId){
+	
+	var frm = document.createElement('form');
+	frm.setAttribute('method', 'post');
+	frm.setAttribute('action', '/member/kakaoLogin.go');
+	var hiddenInput = document.createElement('input');
+	hiddenInput.setAttribute('type','hidden');
+	hiddenInput.setAttribute('name','userid');
+	hiddenInput.setAttribute('value',kakaoId);
+	frm.appendChild(hiddenInput);
+	document.body.appendChild(frm);
+	frm.submit();
+	
+}
+//카카오 초기화
+Kakao.init('84f46626395e42bdc72cdb114b32c584');
+    
+function kakaoLogout() {
+    if (!Kakao.Auth.getAccessToken()) {
+      alert('로그인을 해주세요.');
+      return
+    }
+    Kakao.Auth.logout(function() {
+      location.href = "/login/logout.go"; // 로그아웃 처리
+	})
+}
+</script>
 </head>
 <!-- <link rel="stylesheet" href="../headerimg/header.css"> -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
@@ -285,6 +374,27 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
         padding-top: 15%;
         padding-left: 20%;
     }
+    .hr-sect {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.35);
+        font-size: 15px;
+        font-weight: bold;
+        margin: 20px 0px;
+    }
+    .hr-sect::before,
+    .hr-sect::after {
+        content: "";
+        flex-grow: 1;
+        background: rgba(0, 0, 0, 0.35);
+        height: 1px;
+        font-size: 0px;
+        line-height: 0px;
+        margin: 0px 16px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
     #mid{
     	margin-top:20px;
     	width: 480px;
@@ -306,9 +416,6 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
 	    margin-bottom: 20px;
 	    width: 480px;
 	    height: 40px;
-    }
-    .a_idpw{
-    	text-align: right;
     }
 	/* 버튼전체 */
         .btn22{
@@ -544,18 +651,14 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
                     </td>
                 </tr>
                 <tr>
-                	<span>
                     <td>
                         <input type="checkbox" />아이디 저장
                     </td> 
-                	<div class="a_idpw">
                     <td>
 	                    <a href="#">아아디 찾기</a>
                         |
                         <a href="#">비밀번호 찾기</a> <br />
                     </td>
-                 	</div>
-                 	</span>
                 </tr>
                 <tr>
                     <div class="btn22">
@@ -563,10 +666,24 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
 					  </div>
                 </tr>
             
-            <p>아직 구신사의 회원이 아니신가요?</p><a href="#">회원가입</a>
+            <span><p>아직 구신사의 회원이 아니신가요?</p><a href="#">회원가입</a></span>
 
             </section>
-        
+            
+            
+                <div class="hr-sect">or</div>
+					<a class="btn btnkakao" id="kakao-login-btn" style="text-align:center;" href="javascript:kakaoLogin()">
+						<img src="../resources/snsimg/카카오톡.png" />
+					</a>
+            	</div>
+                <!-- kakaoemail을 넘기기 위한 숨겨진 form -->
+            <!-- <form action="./kakaologin.do" method="post" name="lfrm" hidden>
+            	<input type="text" name="kakaoemail" id="kakaoemail" value="" />
+            </form> -->    
+                	<!-- <input type="button" class="btn_img1"/>
+                	<input type="button" class="btn_img2"/>
+                	<input type="button" class="btn_img3"/>
+                	<input type="button" class="btn_img4"/> -->
             <section id="content2" class="content2">
                 <tr>
                     <div class="no_lo">
