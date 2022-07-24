@@ -19,4 +19,5 @@ public class ApiController {
 		System.out.println("getKakaoApi");
 		return kakaoApi;
 	}
+	
 }

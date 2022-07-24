@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>gusinsa.login</title>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 
 
 <script>
@@ -218,126 +219,116 @@ function kakaoLogout() {
     transition: all .35s;
     opacity: 0.5;
     
-}
-
-#menuicon:checked+label+div{
-    right: 0;
-}
- #menuicon{
-    float: right;
-    display: none;
-}
-#menuicon +label{
-    display: block;
-    width: 60px;
-    height: 50px;
-    position: relative;
-    right: 0;
-    top: calc(50% - 25px);
-    transition: all .0s;
-    cursor: pointer;
-} 
-#menuicon + label span{
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 30px;
-    background: #000;
-    transition: all 1s;
-}
-
-input[id="menuicon"]:checked +label span:nth-child(1){
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-}
-input[id="menuicon"]:checked +label span:nth-child(2){
-    opacity: 0;
-}
-input[id="menuicon"]:checked +label span:nth-child(3){
-    bottom: 50%;
-    transform: translateY(50%) rotate(-45deg);
-}
-#menuicon + label span:nth-child(1){
-    top: 0;
-}
-#menuicon + label span:nth-child(2){
-    top: 50%;
-    transform: translateY(-50%);
-}
-#menuicon + label span:nth-child(3){
-    bottom: 0;
-}
-
-#menuicon:checked+label+div{
-    right: 0;
-}
-#menuicon:checked+label{
-    z-index: 2;
-    right: 500px;
-}
-.sidebar_ul{
-    margin-top: 30%;
-    
-}
-.sidebar_ul #sidebar_li{
-    margin-bottom: 10%;
-    font-size: 18px;
-    text-align: right;
-    margin-right: 70%;  
-    height: 30px;
-    line-height: 30px;
-    list-style:none;
-}
-
-#sidebar_li_a:hover{
-    font-weight: bold;
-}
-#sidebar_li:hover{
-    font-weight: bold;
-}
-
-#sidebar_li_a{
-    text-decoration:none
-}
-
-/* .every{
-    width: 100%;
-    margin: 0 auto; 
-    text-align: center;
-} */
-
-/*푸터어어어*/
-
-
-footer {width: 100%;height: 10px;bottom: 5px;  position: relative;border-top: 1px solid #c4c4c4; color: #808080;font-size: 11px; transform: translateY(-100%);}
-footer a:visited {color: #808080;}
-footer p {margin-top: 0;  margin-left: 10px;}
-footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;} 
-#wrap{
-    width: 100%;height: auto;
-    min-height: 100%;
-    margin-top: 10px;
-}
-#wrap_section{
-    margin-top: px;
-}
-#footer_addr{float: left;}
-.footer_div{margin-top: 20px;margin-right: 30px;float: right; margin-bottom: 10px;}
-
-/* 여기서부터 은주 */
-	.main11{
-		padding-left: 20%;
 	}
-	.main {
+	
+	#menuicon:checked+label+div{
+	    right: 0;
+	}
+	 #menuicon{
+	    float: right;
+	    display: none;
+	}
+	#menuicon +label{
+	    display: block;
+	    width: 60px;
+	    height: 50px;
+	    position: relative;
+	    right: 0;
+	    top: calc(50% - 25px);
+	    transition: all .0s;
+	    cursor: pointer;
+	} 
+	#menuicon + label span{
+	    display: block;
+	    position: absolute;
+	    width: 100%;
+	    height: 4px;
+	    border-radius: 30px;
+	    background: #000;
+	    transition: all 1s;
+	}
+	
+	input[id="menuicon"]:checked +label span:nth-child(1){
+	    top: 50%;
+	    transform: translateY(-50%) rotate(45deg);
+	}
+	input[id="menuicon"]:checked +label span:nth-child(2){
+	    opacity: 0;
+	}
+	input[id="menuicon"]:checked +label span:nth-child(3){
+	    bottom: 50%;
+	    transform: translateY(50%) rotate(-45deg);
+	}
+	#menuicon + label span:nth-child(1){
+	    top: 0;
+	}
+	#menuicon + label span:nth-child(2){
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+	#menuicon + label span:nth-child(3){
+	    bottom: 0;
+	}
+	
+	#menuicon:checked+label+div{
+	    right: 0;
+	}
+	#menuicon:checked+label{
+	    z-index: 2;
+	    right: 500px;
+	}
+	.sidebar_ul{
+	    margin-top: 30%;
+	    
+	}
+	.sidebar_ul #sidebar_li{
+	    margin-bottom: 10%;
+	    font-size: 18px;
+	    text-align: right;
+	    margin-right: 70%;  
+	    height: 30px;
+	    line-height: 30px;
+	    list-style:none;
+	}
+	
+	#sidebar_li_a:hover{
+	    font-weight: bold;
+	}
+	#sidebar_li:hover{
+	    font-weight: bold;
+	}
+	
+	#sidebar_li_a{
+	    text-decoration:none
+	}
+	
+	/* .every{
+	    width: 100%;
+	    margin: 0 auto; 
+	    text-align: center;
+	} */
+	
 
-        min-width: 500px;
-        max-width: 0px;
-        padding: 50px;
-        background: #ffffff;
-        padding-left: 20%;
-        
-        }
+	/* 여기서부터 은주 */
+		.main11{
+			padding-left: 20%;
+		}
+		.main {
+	
+	        min-width: 500px;
+	        max-width: 0px;
+	        padding: 50px;
+	        background: #ffffff;
+	        padding-left: 20%;
+	        
+	     }
+	     .login_one{
+	     	margin-top: 2%;
+	     }
+	     .login_two{
+	     	margin-top: 5%;
+	     	margin-bottom: 5%;
+	     }
     section {
         display: none;
         padding: 20px 0 0;
@@ -396,35 +387,39 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
         margin-right: 0px;
     }
     #mid{
+    	border: 1px solid #d2d2d2;
     	margin-top:20px;
     	width: 480px;
     	height: 40px;
     }
     #mpw{
+    	border: 1px solid #d2d2d2;
     	margin-top:10px;
     	margin-bottom:10px;
     	width: 480px;
     	height: 40px;
     }
     #nid{
+    	border: 1px solid #d2d2d2;
 	    margin-top:20px;
 	    width: 480px;
 	    height: 40px;
     }
     #nno{
+    	border: 1px solid #d2d2d2;
 	    margin-top:20px;
 	    margin-bottom: 20px;
 	    width: 480px;
 	    height: 40px;
     }
 	/* 버튼전체 */
-        .btn22{
+	  .btn22{
             text-align: center;
         }
         /* 로그인 */
         .customm2-btn {
-            width: 200px;
-            height: 40px;
+            width: 460px;
+            height: 50px;
             padding: 5px 5px 5px 5px;
             border: 1px solid #000;
             font-family: 'Lato', sans-serif;
@@ -453,8 +448,8 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
         }
         /* 비회원 로그인 */
         .customm3-btn {
-            width: 200px;
-            height: 40px;
+            width: 460px;
+            height: 50px;
             padding: 5px 5px 5px 5px;
             border: 1px solid #000;
             font-family: 'Lato', sans-serif;
@@ -480,6 +475,12 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
             -4px -4px 5px 0px #fff9,
             7px 7px 20px 0px #0002,
             4px 4px 5px 0px #0001;
+        }
+        #no_no{
+        	margin-left: 5%;
+        }
+        .joinus{
+        	text-align: center;
         }
     </style>
 
@@ -644,6 +645,7 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
             <label for="tab2">비회원</label>
 
             <section id="content1">
+            <div class="login_one">
                 <tr>
                     <td>
                         <input type="text" id="mid" name="mid" placeholder=" 아이디"/> <br />
@@ -665,31 +667,23 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
 					        <button class="customm2-btn btn-1">로그인</button>
 					  </div>
                 </tr>
-            
-            <span><p>아직 구신사의 회원이 아니신가요?</p><a href="#">회원가입</a></span>
-
+					<p class="joinus">아직 구신사의 회원이 아니신가요? <a href="#">회원가입</a></p>
+	
+	            <div class="hr-sect">or</div>
+	            
+	            <tr>
+	            	<td><a href="javascript:kakaoLogin();"><img src="../resources/snsimg/카카오톡.png"/></a></td>
+	            </tr>
+            </div>
             </section>
-            
-            
-                <div class="hr-sect">or</div>
-					<a class="btn btnkakao" id="kakao-login-btn" style="text-align:center;" href="javascript:kakaoLogin()">
-						<img src="../resources/snsimg/카카오톡.png" />
-					</a>
-            	</div>
-                <!-- kakaoemail을 넘기기 위한 숨겨진 form -->
-            <!-- <form action="./kakaologin.do" method="post" name="lfrm" hidden>
-            	<input type="text" name="kakaoemail" id="kakaoemail" value="" />
-            </form> -->    
-                	<!-- <input type="button" class="btn_img1"/>
-                	<input type="button" class="btn_img2"/>
-                	<input type="button" class="btn_img3"/>
-                	<input type="button" class="btn_img4"/> -->
+
             <section id="content2" class="content2">
+            <div class="login_two">
                 <tr>
                     <div class="no_lo">
                     <td>
-                        <span><input type="radio" />주문자 이름+주문번호</span>
-                        <span><input type="radio" />주문자 이름+휴대폰번호</span> <br />
+                        <span><input type="checkbox" />주문자 이름+주문번호</span>
+                        <span id="no_no"><input type="checkbox" />주문자 이름+휴대폰번호</span> <br />
                     </td>
                 </tr>
                 <tr>
@@ -701,49 +695,9 @@ footer p span {display: inline-block;margin-left: 20px; margin-bottom: 5px;}
                 <div class="btn22">
 					        <button class="customm3-btn btn-2">비회원 주문조회</button>
 				</div> 
+			</div>
             </section>
     </div>
 </div>
-<div id='wrap'>
-        <section id="wrap_section">
-            
-        </section>
-        <footer>
-            <div id="footer_addr">
-    
-          <p>
-            <table>
-            <tr>
-                <td>상호명 : (주)구신사</td>
-                <td>조장 : 이종현</td>
-                <td>주소 : 서울시 구로구 </td>
-            </tr>
-            <tr>
-                <td colspan="3">이메일 : dlwhdgus@gmail.com</td>
-                <td></td>
-                <td></td>
-            </tr>
-            </table>
-          </p>
-        </div>
-    
-          <div class="footer_div">
-            <table>
-                <tr>
-                    <td>고객문의 대표전화</td>
-                    <td>고객센터 문의전화</td>
-                </tr>
-                <tr>
-                    <td>1588-1588</td>
-                    <td>1588-3407</td>
-                </tr>
-                <tr>
-                    <td>평일 09:00 ~ 18:00 <br>(주말 및 공휴일 휴무)</td>
-                    <td><a href="#">구신사 상품 문의접수</a></td>
-                </tr>
-            </table>
-          </div>
-      </footer>
-    </div>  
 </body>
 </html>

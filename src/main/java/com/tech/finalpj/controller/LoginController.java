@@ -31,9 +31,5 @@ public class LoginController {
 		
 		return "/login/loginform";
 	}
-	@RequestMapping("/loginform2")
-	public String loginform2(HttpServletRequest request) {
-		
-		return "/login/loginform2";
-	}
+	
 }

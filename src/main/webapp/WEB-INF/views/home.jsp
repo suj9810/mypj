@@ -11,7 +11,6 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 <a href="login/loginform">loginform</a>
-<a href="login/loginform2">loginform2</a>
 <a href="join/joinform2">joinform2</a>
 <a href="join/joinform3">joinform3</a>
 <a href="join/joinform4">joinform4</a>
